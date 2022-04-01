@@ -1,1 +1,13 @@
+INTRODUCTIONz, divided in n × n boxes, containing whole numbers in the range 1 to n2 (n is called the order of a Sudoku puzzle). The goal of the game is to fill the cells so that each row, column and box contain all the numbers ranging from 1 to n2. An important consequence of this is that there must be exactly one number each for each row, column and box. Every Sudoku puzzle start with some cells already containing a number. This is known as a clue, which is a part of the solution. Using the clues as well as the definitions for a solution, one is expected to find a solution.
+
+ 
+Figure 1. Sudoku puzzle
+METHOD
+Backtracking is a form of brute-force strategy that comes into play when addressing a problem that involves evaluating several options since we don't know which one is accurate and we try to solve the problem using the trial and error method, one decision at a time, until we get the desired answer.Sudoku can be solved in the manner described above.
+The difference between brute-force and retracing is that with backtracking, we don't look at all of the choices; instead, we look at only the ones that are worth looking into and create the answer progressively. When a number is not discovered to be legitimate, this method traverses all the vacant cells in some sequence, filling the digits progressively. If there are no violations, the software fills '1' in the first cell, then advances to the second cell and inserts '1' if a violation occurs, then increments and places '2'. It tests in this manner gradually, and if none of the '1' to'9' numbers fit in this cell, the algorithm leaves the cell blank and returns to the previous cell. The value in that cell is increased, and the procedure is repeated until all of the cells have been filled. We start by finding an unfilled cell (i,j). If all the cells are filled then a valid Sudoku is obtained.
+In case of trying to solve the Sudoku, we try to place every number between 1 to 9 in the unfilled cell. Before numbering a number in the box we check for the constraints by checking the current row, current column and current 3×3 submatrix. If any of the any of the constraint becomes false we'll not place that number at (i,j).If all the constraints are true then we'll place that number at (i,j) and then repeat the process by finding an unfilled cell. If at any point none of the numbers can be placed at (i,j) then we've to backtrack and change the values for already visited cells. To check the 3×3 submatrix (box) condition we calculate the center cell using the following equation: r=(row//3)×3+1 for row and c=(col//3)×3+1 for column.
+
+RESULTS
+     THUS OUTPUT IS VERIFIED. 
+
 
